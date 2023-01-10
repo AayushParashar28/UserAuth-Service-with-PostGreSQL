@@ -1,0 +1,26 @@
+{
+  "name": "userauth-service-with-postgresql",
+  "version": "1.0.0",
+  "description": "User Authentication ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AayushParashar28/UserAuth-Service-with-PostGreSQL.git"
+  },
+  "author": "Aayush",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AayushParashar28/UserAuth-Service-with-PostGreSQL/issues"
+  },
+  "homepage": "https://github.com/AayushParashar28/UserAuth-Service-with-PostGreSQL#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.28.0"
+  }
+}
