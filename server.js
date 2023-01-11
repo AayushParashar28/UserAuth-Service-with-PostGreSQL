@@ -1,5 +1,6 @@
-const { Console } = require("console");
 const express = require("express");
+
+const { UserRouter } = require("./src/routes/user.routes");
 
 
 const SetupandStartserver = async function () {
@@ -8,6 +9,7 @@ const SetupandStartserver = async function () {
 
 
     app.use(express.json());
+    app.use(UserRouter);
 
 
     app.listen(4000, () => {
