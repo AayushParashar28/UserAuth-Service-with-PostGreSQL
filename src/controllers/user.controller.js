@@ -33,7 +33,7 @@ exports.getAllUser = async (req, res) => {
   try {
 
     const result = await User.findAll({
-      attributes: ["id", "name", "email"]
+      attributes: ["id", "firstName", "lastName", "MobileNumber", "email"]
     });
 
     return res.status(201).json({
