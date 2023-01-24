@@ -10,6 +10,8 @@ UserRouter.get("/users", auth ,UserController.getAllUser);
 
 UserRouter.post("/signin", UserController.signin);
 
+UserRouter.get("/otp",UserController.requestOtp);
+
 module.exports = {
     UserRouter,
 };

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 
 const { UserRouter } = require("./src/routes/user.routes");
@@ -12,8 +13,9 @@ const SetupandStartserver = async function () {
     app.use(UserRouter);
 
 
-    app.listen(4000, () => {
-        console.log("Server Started at 4000");
+    const PORT = process.env.PORT;
+    app.listen(PORT, (req, res) => {
+      console.log(`server started at 3000`);
     })
 }
 

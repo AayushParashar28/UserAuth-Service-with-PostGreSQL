@@ -94,3 +94,36 @@ exports.signin = async (req, res) => {
   }
 
 }
+
+
+exports.requestOtp = async (req, res) => {
+  try {
+      const user = {
+      email: req.body.email,
+    }
+    const checkUser = await User.findOne({
+      where:
+      {
+        email: user.email
+      }
+    })
+    if (!checkUser) {
+      return res.status(200).json({
+        "msg": "Invalid Email"
+      })
+    }
+    if(checkUser) {
+      const otp = otpHelper.generateOTP();
+      user.otp = otp;
+      await otpHelper.sendOTP(otp)
+      return res.status(200).json({
+        "msg":"Otp Sent Sucessfully"
+      })
+    }
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      msg: "Internal server error",
+    });
+  }
+}
